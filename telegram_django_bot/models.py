@@ -350,7 +350,6 @@ class BotMenuElem(models.Model):
 class BotMenuElemAttrText(models.Model):
     class Meta:
         unique_together = [['bot_menu_elem', 'language_code', 'default_text']]
-        index_together = [['bot_menu_elem', 'language_code', 'default_text']]
 
     dttm_added = models.DateTimeField(default=timezone.now)
     bot_menu_elem = models.ForeignKey(BotMenuElem, null=False, on_delete=models.CASCADE)
